@@ -1,3 +1,12 @@
+@font-face {
+    font-family: Roboto;
+    src: url(/src/assets/fonts/Roboto-VariableFont_wdth\,wght.ttf);
+}
+@font-face {
+    font-family: Merriweather;
+    src: url(/src/assets/fonts/Merriweather-VariableFont_opsz\,wdth\,wght.ttf);
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -5,11 +14,16 @@
 }
   
 :root {
---primary-color: --secondary-color: ;
+--primary-color: ;
+--secondary-color:
+
+--primary-font-color: ;
+
+--primary-icon-color: ;
 }
   
 img {
-max-width: 100%;
-display: block;
-height: auto;
+    max-width: 100%;
+    display: block;
+    height: auto;
 }
