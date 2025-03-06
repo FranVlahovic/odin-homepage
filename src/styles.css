@@ -14,12 +14,15 @@
 }
   
 :root {
---primary-color: ;
---secondary-color:
+    --primary-color: #141414;
+    --secondary-color: #202020;
+    --shadow-color: #2e2e2e;
 
---primary-font-color: ;
+    --card-color: #403d39;
 
---primary-icon-color: ;
+    --primary-font-color: #fffcf2;
+
+    --primary-icon-color: brightness(0) saturate(100%) invert(27%) sepia(11%) saturate(2635%) hue-rotate(169deg) brightness(102%) contrast(86%);
 }
   
 img {
@@ -27,3 +30,37 @@ img {
     display: block;
     height: auto;
 }
+
+h2 {
+    font-family: Merriweather;
+    font-weight: 400;
+}
+
+body::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    height: 40rem;
+    background-color: var(--primary-color);
+    transform-origin: 0;
+    transform: skewY(-10deg);
+    box-shadow: 0rem 0.1rem 1rem var(--shadow-color);
+}
+
+body {
+    background-color: var(--secondary-color);
+}
+
+/* HEADER */
+#header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5em;
+}
+
+.about-me-socials {
+    filter: var(--primary-icon-color);
+}
+
