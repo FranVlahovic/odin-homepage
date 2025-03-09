@@ -41,7 +41,7 @@ const renderCards = () => {
         {
             src: restaurantPage,
             alt: 'Screenshot of Dieci Piatti Restaurant Page ',
-            name: 'Dieci Piatti Restaurant Page',
+            name: 'Dieci Piatti Page',
             text: 'Dieci Piatti Restaurant Page project is a single-page application designed to emulate a restaurant website.',
             code: 'https://github.com/FranVlahovic/odin-restaurant-page',
             live: 'https://franvlahovic.github.io/odin-restaurant-page/',

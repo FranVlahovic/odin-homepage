@@ -23,6 +23,7 @@
     --primary-font-color: #fffcf2;
 
     --primary-icon-color: brightness(0) saturate(100%) invert(27%) sepia(11%) saturate(2635%) hue-rotate(169deg) brightness(102%) contrast(86%);
+    --secondary-icon-color: brightness(0) saturate(100%) invert(92%) sepia(1%) saturate(1805%) hue-rotate(337deg) brightness(108%) contrast(101%);
 }
   
 img {
@@ -38,6 +39,7 @@ h2 {
 p {
     font-family: Roboto;
     color: var(--primary-font-color);
+    font-size: 1.1em;
 }
 
 body::before {
@@ -80,11 +82,9 @@ body {
     height: 100%;
     object-fit: cover;
     object-position: center 30%;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
 }
 
-.overlay{
-    position:relative;
-}
 .overlay {
     position: absolute;
     background: rgba(0,0,0,0.2);
@@ -112,9 +112,9 @@ body {
     padding: 2rem;
     max-width: 40rem;
     gap: 1em;
-    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
 }
-.about-me-container h1 {
+.about-me-container h1, #main h1, #footer h1 {
     font-size: 2.5em;
     font-weight: 500;
     color: var(--primary-font-color);
@@ -131,23 +131,16 @@ body {
 }
 
 .about-me-socials img, .card-links img {
-    filter: var(--primary-icon-color);;
-    width: 1.5rem;
+    width: 1.8rem;
 }
 
+/* MAIN */
 #main {
     display: flex;
     flex-direction: column;
     grid-area: main;
     padding: 5rem 8rem;
     gap: 2em;
-    margin: auto;
-}
-#main h1 {
-    font-family: Merriweather;
-    font-size: 2em;
-    color: var(--primary-font-color);
-    font-weight: 500;
 }
 
 .card-container {
@@ -162,6 +155,7 @@ body {
     max-width: 30rem;
     background-color: var(--primary-color);
     border-radius: 0.5em;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
 }
 .card h2 {
     font-family: Roboto;
@@ -190,4 +184,134 @@ body {
 .card-links {
     display: flex;
     gap: 1em;
+}
+.card-links img {
+    width: 1.5rem;
+}
+
+/* FOOTER */
+#footer {
+    display: flex;
+    justify-content: space-between;
+    padding: 5rem 8rem;
+}
+#footer p {
+    font-family: Roboto;
+    font-weight: 200;
+}
+.footer-left-container {
+    display: flex;
+    flex-direction: column;
+    max-width: 20rem;
+    gap: 2em;
+}
+.footer-socials {
+    display: flex;
+    gap: 2em;
+}
+.footer-phone, .footer-email {
+    display: flex;
+    gap: 1em;
+    align-items: center;
+}
+.footer-phone-email {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.footer-socials img, .footer-phone-email img {
+    width: 2rem;
+}
+.footer-phone-email img {
+    filter: var(--secondary-icon-color);
+}
+.footer-socials img {
+    filter: var(--primary-icon-color);
+}
+.footer-right-container {
+    position: relative;
+}
+.footer-overlay {
+    position: absolute;
+    background: rgba(0,0,0,0.4);
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* ANIMATION */
+.about-me-container img:hover, .card-links img:hover, .footer-socials img:hover {
+    transform: scale(1.1);
+    filter: var(--secondary-icon-color);
+}
+ 
+.about-me-container img, .card-links img, .footer-socials img {
+    transition: transform .3s ease-in-out, filter .5s ease-in-out;
+    filter: var(--primary-icon-color);
+}
+
+/* MEDIA QUERIES */
+@media (max-width: 1500px) {
+    #main {
+        align-items: center;
+        padding: 5rem 8rem;
+    }
+    #main h1 {
+        align-self: flex-start;
+    }
+    .card-container {
+        grid-template-columns: 1fr 1fr;
+        gap: 4rem;
+    }
+}
+
+@media (max-width: 1250px) {
+    #main, #footer, #header {
+        padding: 5rem 7rem;
+    }
+    .card-container {
+        gap: 3rem;
+    }
+    .card h2 {
+        max-width: 14rem;
+    }
+    .card-name-links {
+        align-items: flex-start;
+    }
+    .header-photo-container {
+        min-width: 20rem;
+    }
+}
+
+@media (max-width: 1024px) {
+    #main, #footer, #header {
+        padding: 5rem 6rem;
+    }
+    .card .main-image {
+        height: 15rem;
+    }
+    .footer-right-container img {
+        max-width: 33rem;
+    }
+}
+
+@media (max-width: 768px) {
+    #main, #footer, #header {
+        padding: 5rem 5rem;
+    }
+    .card .main-image {
+        height: 12rem;
+    }
+    h2 {
+        font-size: 1.3em;
+    }
+    p {
+        font-size: 1em;
+    }
+    .footer-right-container img {
+        width: 20rem;
+        object-fit: cover;
+    }
 }
