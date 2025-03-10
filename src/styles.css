@@ -194,6 +194,7 @@ body {
     display: flex;
     justify-content: space-between;
     padding: 5rem 8rem;
+    background-color: var(--primary-color);
 }
 #footer p {
     font-family: Roboto;
@@ -271,6 +272,12 @@ body {
     #main, #footer, #header {
         padding: 5rem 7rem;
     }
+    /* HEADER */
+    .header-photo-container {
+        min-width: 20rem;
+    }
+
+    /* MAIN */
     .card-container {
         gap: 3rem;
     }
@@ -280,8 +287,12 @@ body {
     .card-name-links {
         align-items: flex-start;
     }
-    .header-photo-container {
-        min-width: 20rem;
+
+    /* FOOTER */
+    .footer-right-container {
+        max-width: 30rem;
+        overflow: hidden;
+        height: fit-content;
     }
 }
 
@@ -293,7 +304,11 @@ body {
         height: 15rem;
     }
     .footer-right-container img {
-        max-width: 33rem;
+        max-width: 25rem;
+    }
+    .footer-right-container {
+        overflow: hidden;
+        height: fit-content;
     }
 }
 
@@ -301,6 +316,28 @@ body {
     #main, #footer, #header {
         padding: 5rem 5rem;
     }
+
+    /* HEADER */
+    #header {
+        display: flex;
+        flex-direction: column;
+        padding-bottom: 0;
+    }
+
+    #header h1 {
+        align-self: flex-end;
+    }
+
+    .header-photo-container {
+        top: 1%;
+        right: 15%;
+        z-index: 2;
+    }
+    .about-me-container {
+        position: relative;
+        top: -9%;
+    }
+
     .card .main-image {
         height: 12rem;
     }
@@ -310,8 +347,69 @@ body {
     p {
         font-size: 1em;
     }
+
+    /* FOOTER */
+    .footer-right-container  {
+        position: relative;
+        overflow: hidden;
+        height: fit-content;
+    }
     .footer-right-container img {
-        width: 20rem;
+        max-width: 17rem;
         object-fit: cover;
+    }
+}
+
+@media (max-width: 480px) {
+    /* HEADER */
+    #header {
+        gap: 3em;
+    }
+    #header h1 {
+        align-self: center;
+    }
+    .about-me-container {
+        position: static;
+    }
+    .header-photo-container {
+        position: relative;
+        left: 0;
+    }
+
+    /* MAIN */
+    #main, #footer, #header {
+        padding: 4rem 3rem;
+    }
+    #main h1 {
+        align-self: center;
+    }
+    .card-container {
+        display: flex;
+        flex-direction: column;
+        gap: 4rem;
+    }
+    .card .main-image {
+        height: 19rem;
+    }
+
+    /* FOOTER  */
+    #footer {
+        display: flex;
+        flex-direction: column;
+        gap: 4rem;
+    }
+    #footer h1, .footer-socials {
+        align-self: center;
+    }
+    .footer-left-container {
+        align-self: center;
+    }
+    .footer-right-container {
+        margin-right: -3rem;
+        margin-left: -3rem;
+        margin-bottom: -4rem;
+    }
+    .footer-right-container img {
+        max-width: 100%;
     }
 }
